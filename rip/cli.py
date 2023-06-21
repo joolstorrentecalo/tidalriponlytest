@@ -133,7 +133,7 @@ class DownloadCommand(Command):
 
             self.line(
                 f"\n<info>A new version of streamrip <title>v{newest_version}</title>"
-                " is available! Run <cmd>pip3 install streamrip --upgrade</cmd>"
+                " is available! Run <cmd>pip3 install tidalrip --upgrade</cmd>"
                 " to update.</info>\n"
             )
 
@@ -143,7 +143,7 @@ class DownloadCommand(Command):
             issue_reference = re.compile(r"(#\d+)")
 
             release_notes = requests.get(
-                "https://api.github.com/repos/nathom/streamrip/releases/latest"
+                "https://github.com/JDTCC/tidalriponly/latest"
             ).json()["body"]
 
             release_notes = md_header.sub(r"<header>\1</header>", release_notes)
